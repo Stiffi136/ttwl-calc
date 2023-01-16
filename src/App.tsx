@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import StatSelector from './StatSelector';
-import { type } from 'os';
 import ItemStats from './ItemStats';
 
 export type StatType = null | "GunDamage" | "AllDamage" | "ElementalDamage" | "PoisonDamage" | "LightningDamage" | "FireDamage" | "FrostDamage" | "DarkDamage" | "SpellDamage" | "MeleeDamage";
