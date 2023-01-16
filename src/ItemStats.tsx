@@ -1,6 +1,6 @@
 import { Dispatch, useState } from "react";
 import StatSelector from "./StatSelector";
-import { StatType, Stat } from "./App";
+import { StatType, Stat, Condition } from "./App";
 
 interface ItemStatsProps {
     setItem: Dispatch<React.SetStateAction<Stat[]>>
@@ -12,8 +12,8 @@ function ItemStats({ setItem }: ItemStatsProps) {
 
     const statSelectors = [];
     for (let i = 0; i < statCount; i++) {
-        statSelectors.push(<StatSelector key={i} onChange={(value, type) => {
-            const newStats = [...stats.filter(stat => { return i !== stat.idx }), { idx: i, value: value, type: type }];
+        statSelectors.push(<StatSelector key={i} onChange={(value, type, condition) => {
+            const newStats = [...stats.filter(stat => { return i !== stat.idx }), { idx: i, value: value, type: type, condition: condition }];
             setStats(newStats);
             setItem(newStats);
         }} />);
